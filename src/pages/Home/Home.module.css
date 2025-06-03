@@ -1,0 +1,19 @@
+.sectionHero {
+  /* background-color: rgb(0, 255, 242); */
+}
+
+.heroContainer {
+  padding: 120px 0;
+}
+
+.homeTitle {
+  font-weight: 500;
+  font-size: 52px;
+  color: #333;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
