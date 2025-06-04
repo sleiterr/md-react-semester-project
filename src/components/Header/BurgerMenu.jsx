@@ -23,8 +23,8 @@ export const BurgerMenu = ({ isOpen, onClose }) => {
               </Link>
             </li>
             <li className={s.listItem}>
-              <Link className={s.mobLink} to="/about" onClick={handleLinkClick}>
-                About
+              <Link className={s.navLink} to="/product-page">
+                Shop
               </Link>
             </li>
             <li className={s.listItem}>

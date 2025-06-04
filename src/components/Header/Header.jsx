@@ -25,9 +25,10 @@ const Header = () => {
               Home
             </Link>
           </li>
+
           <li className={s.listItem}>
-            <Link className={s.navLink} to="/about">
-              About
+            <Link className={s.navLink} to="/product-page">
+              Shop
             </Link>
           </li>
           <li className={s.listItem}>
