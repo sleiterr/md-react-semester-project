@@ -111,6 +111,7 @@ const ProductPage = () => {
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
         categories={categories}
+        sortOption={sortOption}
         setSortOption={setSortOption}
         showOnlyFavorites={showOnlyFavorites}
         setShowOnlyFavorites={setShowOnlyFavorites}
