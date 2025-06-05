@@ -35,7 +35,7 @@ const ProductPage = () => {
         const res = await fetch("https://dummyjson.com/products");
         if (!res.ok) throw new Error("Failed to fetch data");
 
-        const data = await res.json("");
+        const data = await res.json();
         setProducts(data.products);
       } catch (err) {
         setError(err.message);
@@ -87,17 +87,17 @@ const ProductPage = () => {
       }
     });
 
-  const totalPges = Math.ceil(filteredProducts.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const pageProducts = filteredProducts.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
 
   useEffect(() => {
-    if (currentPage > totalPges) {
+    if (currentPage > totalPages) {
       setCurrentPage(1);
     }
-  }, [filteredProducts, currentPage, totalPges]);
+  }, [filteredProducts, currentPage, totalPages]);
 
   return (
     <div>
@@ -130,7 +130,7 @@ const ProductPage = () => {
 
           <Pagination
             currentPage={currentPage}
-            totalPges={totalPges}
+            totalPges={totalPages}
             setCurrentPage={setCurrentPage}
           />
         </>
