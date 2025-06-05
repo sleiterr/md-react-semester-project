@@ -87,7 +87,7 @@ const ProductPage = () => {
       }
     });
 
-  const totalPges = Match.ceil(filteredProducts.length / itemsPerPage);
+  const totalPges = Math.ceil(filteredProducts.length / itemsPerPage);
   const pageProducts = filteredProducts.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
