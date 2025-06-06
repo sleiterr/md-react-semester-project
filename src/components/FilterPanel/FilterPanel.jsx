@@ -45,6 +45,7 @@ const FilterPanel = ({
         <option value="priceDesc">Price (High to low)</option>
         <option value="alphaAsc">A–Z</option>
         <option value="alphaDesc">Z-A</option>
+        <option value="ratingDesc">Rating</option>
       </select>
 
       <label className={s.checkBoxLabel}>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProductList from "../../components/ProductList/ProductList";
 import Pagination from "../../components/Pagination/Pagination";
 import FilterPanel from "../../components/FilterPanel/FilterPanel";
+import s from "./ProductPage.module.css";
 
 import {
   getFavoritesFromStorage,
@@ -24,7 +25,7 @@ const ProductPage = () => {
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
 
-  const itemsPerPage = 10;
+  const itemsPerPage = 12;
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -100,42 +101,44 @@ const ProductPage = () => {
   }, [filteredProducts, currentPage, totalPages]);
 
   return (
-    <div>
-      <div>
-        <h2>Shop</h2>
+    <section>
+      <div className={`${s.productsContainer}`}>
+        <div>
+          <h2>Shop</h2>
+        </div>
+
+        <FilterPanel
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          categories={categories}
+          sortOption={sortOption}
+          setSortOption={setSortOption}
+          showOnlyFavorites={showOnlyFavorites}
+          setShowOnlyFavorites={setShowOnlyFavorites}
+          resetFilters={resetFilters}
+        />
+
+        {loading && <p>Loader produkter...</p>}
+        {error && <p className={s.error}>Fejl: {error}</p>}
+        {!loading && !error && (
+          <>
+            <ProductList
+              products={pageProducts}
+              favoriteIds={favoriteIds}
+              toggleFavorite={toggleFavorite}
+            />
+
+            <Pagination
+              currentPage={currentPage}
+              totalPges={totalPages}
+              setCurrentPage={setCurrentPage}
+            />
+          </>
+        )}
       </div>
-
-      <FilterPanel
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        categories={categories}
-        sortOption={sortOption}
-        setSortOption={setSortOption}
-        showOnlyFavorites={showOnlyFavorites}
-        setShowOnlyFavorites={setShowOnlyFavorites}
-        resetFilters={resetFilters}
-      />
-
-      {loading && <p>Loader produkter...</p>}
-      {error && <p className={s.error}>Fejl: {error}</p>}
-      {!loading && !error && (
-        <>
-          <ProductList
-            products={pageProducts}
-            favoriteIds={favoriteIds}
-            toggleFavorite={toggleFavorite}
-          />
-
-          <Pagination
-            currentPage={currentPage}
-            totalPges={totalPages}
-            setCurrentPage={setCurrentPage}
-          />
-        </>
-      )}
-    </div>
+    </section>
   );
 };
 
