@@ -15,6 +15,19 @@ const ProductList = ({ products, favoriteIds, toggleFavorite }) => {
           const isFavorite = favoriteIds.includes(prod.id);
           return (
             <li className={s.listItem} key={prod.id}>
+              <div className={s.likeBtn}>
+                <button
+                  onClick={() => toggleFavorite(prod.id)}
+                  className={`${s.favoriteButt} ${
+                    isFavorite ? s.favorited : ""
+                  }`}
+                  aria-label={
+                    isFavorite ? "Remove from favorites" : "Add to favorites"
+                  }
+                >
+                  {isFavorite ? <FcLike /> : <FcLikePlaceholder />}
+                </button>
+              </div>
               <Link to={`/product-detail/${prod.id}`}>
                 <img
                   src={prod.thumbnail}
@@ -34,19 +47,6 @@ const ProductList = ({ products, favoriteIds, toggleFavorite }) => {
                   <div className={s.priceBox}>
                     <p className={s.priceProducts}>${prod.price}</p>
                   </div>
-                </div>
-                <div className={s.likeBtn}>
-                  <button
-                    onClick={() => toggleFavorite(prod.id)}
-                    className={`${s.favoriteButt} ${
-                      isFavorite ? s.favorited : ""
-                    }`}
-                    aria-label={
-                      isFavorite ? "Remove from favorites" : "Add to favorites"
-                    }
-                  >
-                    {isFavorite ? <FcLike /> : <FcLikePlaceholder />}
-                  </button>
                 </div>
               </Link>
             </li>

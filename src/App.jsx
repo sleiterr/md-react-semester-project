@@ -30,7 +30,8 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header cartCount={cart.length} />
+      
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

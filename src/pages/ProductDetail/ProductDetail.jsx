@@ -34,6 +34,20 @@ const ProductDetail = ({ addToCart }) => {
   return (
     <section className={s.productSection}>
       <div className="container">
+        <div className={s.productLink}>
+          <ul className={s.linkList}>
+            <li className={s.productNav}>
+              <Link className={s.productNavLink} to="/">
+                Home
+              </Link>
+            </li>
+            <li className={s.productNav}>
+              <Link className={s.productNavLink} to="/product-page">
+                Product page
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div className={s.productContainer}>
           <div>
             <img
@@ -67,7 +81,7 @@ const ProductDetail = ({ addToCart }) => {
                 className={s.addButton}
               >
                 Add To Cart
-                <HiOutlineShoppingBag />
+                <HiOutlineShoppingBag className={s.productIcon} />
               </button>
             </div>
           </div>

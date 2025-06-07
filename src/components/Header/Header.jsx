@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import { BurgerMenu } from "./BurgerMenu";
 import { IoIosMenu } from "react-icons/io";
-import { PiShoppingCart } from "react-icons/pi";
+import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
 import s from "./Header.module.css";
 
-const Header = () => {
+const Header = ({ cartCount }) => {
   const [menuOpen, setmenuOpen] = useState(false);
 
   return (
@@ -37,12 +37,14 @@ const Header = () => {
               Contact
             </Link>
           </li>
-          <li className={s.listItem}>
-            <Link to="/cart">
-              <PiShoppingCart size={36} />
-            </Link>
-          </li>
+          <li className={s.listItem}></li>
         </ul>
+        <div className={s.cartBox}>
+          <Link to="/cart" className={s.cartLink}>
+            <HiOutlineShoppingBag className={s.cartItem} />
+            {cartCount > 0 && <span className={s.cartCount}>{cartCount}</span>}
+          </Link>
+        </div>
       </nav>
     </header>
   );

@@ -1,0 +1,7 @@
+.cartImg {
+  object-fit: cover;
+  width: 160px;
+  height: 160px;
+
+  outline: 1px solid red;
+}
