@@ -61,6 +61,4 @@ button {
   width: min(90%, 1270px); /* parent size 100% width */
   margin: 0 auto;
   padding: 0 15px;
-
-  background-color: red;
 }

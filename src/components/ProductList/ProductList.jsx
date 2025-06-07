@@ -15,7 +15,7 @@ const ProductList = ({ products, favoriteIds, toggleFavorite }) => {
           const isFavorite = favoriteIds.includes(prod.id);
           return (
             <li className={s.listItem} key={prod.id}>
-              <Link to={`/product-detail${prod.id}`}>
+              <Link to={`/product-detail/${prod.id}`}>
                 <img
                   src={prod.thumbnail}
                   alt={prod.title}

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { BurgerMenu } from "./BurgerMenu";
 import { IoIosMenu } from "react-icons/io";
+import { PiShoppingCart } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 import s from "./Header.module.css";
@@ -34,6 +35,11 @@ const Header = () => {
           <li className={s.listItem}>
             <Link className={s.navLink} to="/contact">
               Contact
+            </Link>
+          </li>
+          <li className={s.listItem}>
+            <Link to="/cart">
+              <PiShoppingCart size={36} />
             </Link>
           </li>
         </ul>
