@@ -11,7 +11,8 @@ import {
   saveFavoritesToStorage,
 } from "../../utils/localStorage";
 
-const ProductPage = ({ cart, addToCart }) => {
+/* { cart, addToCart } */
+const ProductPage = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -138,7 +139,7 @@ const ProductPage = ({ cart, addToCart }) => {
               setCurrentPage={setCurrentPage}
             />
 
-            <ProductDetail cart={cart} addToCart={addToCart} />
+            {/* <ProductDetail cart={cart} addToCart={addToCart} /> */}
           </>
         )}
       </div>

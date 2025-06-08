@@ -28,10 +28,14 @@ function App() {
     setCart([...cart, product]);
   };
 
+  const deleteFromCart = (id) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+  };
+
   return (
     <>
       <Header cartCount={cart.length} />
-      
+
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -41,7 +45,10 @@ function App() {
             path="/product-detail/:id"
             element={<ProductDetail cart={cart} addToCart={addToCart} />}
           />
-          <Route path="/cart" element={<CartPage cart={cart} />} />
+          <Route
+            path="/cart"
+            element={<CartPage cart={cart} deleteFromCart={deleteFromCart} />}
+          />
         </Routes>
       </main>
     </>
