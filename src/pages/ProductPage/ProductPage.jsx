@@ -72,7 +72,9 @@ const ProductPage = () => {
 
   const filteredProducts = products
     .filter((p) => p.title.toLowerCase().includes(searchTerm.toLowerCase()))
-    .filter((p) => (selectedCategory ? p.category === selectedCategory : true))
+    .filter(
+      (p) => selectedCategory === "all" || p.category === selectedCategory
+    )
     .filter((p) => (showOnlyFavorites ? favoriteIds.includes(p.id) : true))
     .sort((a, b) => {
       switch (sortOption) {
@@ -106,10 +108,6 @@ const ProductPage = () => {
   return (
     <section>
       <div className={`${s.productsContainer}`}>
-        <div>
-          <h2>Shop</h2>
-        </div>
-
         <FilterPanel
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
@@ -135,7 +133,7 @@ const ProductPage = () => {
 
             <Pagination
               currentPage={currentPage}
-              totalPges={totalPages}
+              totalPages={totalPages}
               setCurrentPage={setCurrentPage}
             />
 

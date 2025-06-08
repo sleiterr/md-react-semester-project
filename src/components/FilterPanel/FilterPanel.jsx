@@ -27,7 +27,7 @@ const FilterPanel = ({
         onChange={(e) => setSelectedCategory(e.target.value)}
         className={s.select}
       >
-        <option>Alle kategorie</option>
+        <option value="all">Alle kategorie</option>
         {categories.map((cat) => (
           <option key={cat} value={cat}>
             {cat}

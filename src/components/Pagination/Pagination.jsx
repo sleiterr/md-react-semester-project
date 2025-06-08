@@ -13,15 +13,15 @@ const Pagination = ({ currentPage, totalPages, setCurrentPage }) => {
 
   return (
     <div className={s.pagination}>
-      <button onClick={prev} disabled={currentPage === 1}>
+      <button className={s.btnPagination} onClick={prev} disabled={currentPage === 1}>
         <SlArrowRight className={`${s.arrowLeft} ${s.arrow}`} />
-        <span>Previous</span>
+        Previous
       </button>
       <span>
         Side {currentPage} af {totalPages}
       </span>
-      <button onClick={next} disabled={currentPage === totalPages}>
-        <span>Next</span>
+      <button className={s.btnPagination} onClick={next} disabled={currentPage === totalPages}>
+        Next
         <SlArrowRight className={`${s.arrowRight} ${s.arrow}`} />
       </button>
     </div>

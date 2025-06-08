@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoCheckmark } from "react-icons/io5";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { LiaShippingFastSolid } from "react-icons/lia";
 
 import { useParams, Link } from "react-router-dom";
 import s from "./ProductDetail.module.css";
@@ -57,9 +58,12 @@ const ProductDetail = ({ addToCart }) => {
             />
           </div>
           <div className={s.descDetail}>
-            <div className={s.subjectDet}>
+            <div className="">
               <p className={s.brand}>{product.brand}</p>
+            </div>
+            <div className={s.subjectDet}>
               <h4 className={s.descTitle}>{product.title}</h4>
+              <p className={s.sku}>{product.sku}</p>
             </div>
             <div className={s.priceDet}>
               <p className={s.price}>$ {product.price}</p>
@@ -83,6 +87,12 @@ const ProductDetail = ({ addToCart }) => {
                 Add To Cart
                 <HiOutlineShoppingBag className={s.productIcon} />
               </button>
+            </div>
+            <div className={s.shippingInfo}>
+              <p className={s.shippingDesc}>
+                <LiaShippingFastSolid className={s.shippingIcon} />{" "}
+                {product.shippingInformation}
+              </p>
             </div>
           </div>
         </div>
