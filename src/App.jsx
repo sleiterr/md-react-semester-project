@@ -58,7 +58,7 @@ function App() {
     setCart((prevCart) =>
       prevCart.map((item) =>
         item.id === productId && item.quantity > 1
-          ? { ...item, quantity: item.quantity + 1 }
+          ? { ...item, quantity: item.quantity - 1 }
           : item
       )
     );

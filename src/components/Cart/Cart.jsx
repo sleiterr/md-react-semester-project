@@ -1,16 +1,25 @@
 import React from "react";
 import { TbHttpDelete, TbMoodEmpty } from "react-icons/tb";
+import { FiMinus } from "react-icons/fi";
+import { PiPlus } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import s from "./Cart.module.css";
 
 const Cart = ({ cart, deleteFromCart, increaseQuantity, decreaseQuantity }) => {
+
   const Counter = ({ quantity, onDecrease, onIncrease }) => (
-    <div>
-      <button onClick={onDecrease} disabled={quantity <= 1}>
-        -
+    <div className={s.quantityBox}>
+      <button
+        className={s.quantityBtn}
+        onClick={onDecrease}
+        disabled={quantity <= 1}
+      >
+        <FiMinus />
       </button>
-      <span>{quantity}</span>
-      <button onClick={onIncrease}>+</button>
+      <span className={s.quantityItem}>{quantity}</span>
+      <button className={s.quantityBtn} onClick={onIncrease}>
+        <PiPlus />
+      </button>
     </div>
   );
 
@@ -43,11 +52,14 @@ const Cart = ({ cart, deleteFromCart, increaseQuantity, decreaseQuantity }) => {
                   <p className={s.cartBrand}>{item.brand}</p>
                   <p className={s.cartTitle}>{item.title}</p>
                 </div>
-                <Counter
-                  quantity={item.quantity}
-                  onIncrease={() => increaseQuantity(item.id)}
-                  onDecrease={() => decreaseQuantity(item.id)}
-                />
+                <div>
+                  <Counter
+                    className={s.quantity}
+                    quantity={item.quantity}
+                    onIncrease={() => increaseQuantity(item.id)}
+                    onDecrease={() => decreaseQuantity(item.id)}
+                  />
+                </div>
 
                 <div className={s.priceBox}>
                   <p className={s.cartPrice}>$ {item.price}</p>
