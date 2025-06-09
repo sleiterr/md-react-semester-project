@@ -25,16 +25,53 @@ function App() {
   const addToCart = (product) => {
     console.log("ADDING TO CART:", product);
 
-    setCart([...cart, product]);
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find((item) => item.id === product.id);
+
+      if (existingProduct) {
+        // The product is already available - updating the quantity
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        // The product is not available yet — add it with quantity = 1
+        return [...prevCart, { ...product, quantity: 1 }];
+      }
+    });
   };
 
   const deleteFromCart = (id) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
+  const increaseQuantity = (productId) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (productId) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === productId && item.quantity > 1
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  };
+
   return (
     <>
-      <Header cartCount={cart.length} />
+      <Header
+        cartCount={cart.reduce(
+          (total, item) => total + (item.quantity || 1),
+          0
+        )}
+      />
 
       <main>
         <Routes>
@@ -47,7 +84,14 @@ function App() {
           />
           <Route
             path="/cart"
-            element={<CartPage cart={cart} deleteFromCart={deleteFromCart} />}
+            element={
+              <CartPage
+                cart={cart}
+                deleteFromCart={deleteFromCart}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+              />
+            }
           />
         </Routes>
       </main>

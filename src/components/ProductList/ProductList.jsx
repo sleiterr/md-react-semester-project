@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 
 const ProductList = ({ products, favoriteIds, toggleFavorite }) => {
-  if (products.length === 0) {
-    return <p>No products found</p>;
-  }
+  // if (products.length === 0) {
+  //   return <p>No products found</p>;
+  // }
 
   return (
     <div className={s.productContainer}>

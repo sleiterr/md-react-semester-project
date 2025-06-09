@@ -90,7 +90,7 @@ const ProductDetail = ({ addToCart }) => {
             </div>
             <div className={s.shippingInfo}>
               <p className={s.shippingDesc}>
-                <LiaShippingFastSolid className={s.shippingIcon} />{" "}
+                <LiaShippingFastSolid className={s.shippingIcon} />
                 {product.shippingInformation}
               </p>
             </div>

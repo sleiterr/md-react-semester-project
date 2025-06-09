@@ -3,7 +3,17 @@ import { TbHttpDelete, TbMoodEmpty } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import s from "./Cart.module.css";
 
-const Cart = ({ cart, deleteFromCart }) => {
+const Cart = ({ cart, deleteFromCart, increaseQuantity, decreaseQuantity }) => {
+  const Counter = ({ quantity, onDecrease, onIncrease }) => (
+    <div>
+      <button onClick={onDecrease} disabled={quantity <= 1}>
+        -
+      </button>
+      <span>{quantity}</span>
+      <button onClick={onIncrease}>+</button>
+    </div>
+  );
+
   return (
     <div className={s.cardBox}>
       <div className={s.cartCaption}>
@@ -33,6 +43,12 @@ const Cart = ({ cart, deleteFromCart }) => {
                   <p className={s.cartBrand}>{item.brand}</p>
                   <p className={s.cartTitle}>{item.title}</p>
                 </div>
+                <Counter
+                  quantity={item.quantity}
+                  onIncrease={() => increaseQuantity(item.id)}
+                  onDecrease={() => decreaseQuantity(item.id)}
+                />
+
                 <div className={s.priceBox}>
                   <p className={s.cartPrice}>$ {item.price}</p>
                   <button

@@ -18,7 +18,7 @@ const ProductPage = () => {
   const [loading, setLoading] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortOption, setSortOption] = useState("");
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
@@ -123,6 +123,11 @@ const ProductPage = () => {
 
         {loading && <p>Loader produkter...</p>}
         {error && <p className={s.error}>Fejl: {error}</p>}
+
+        {!loading && !error && filteredProducts.length === 0 && (
+          <p>No products found</p>
+        )}
+
         {!loading && !error && (
           <>
             <ProductList

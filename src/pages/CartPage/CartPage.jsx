@@ -1,16 +1,28 @@
+//CartPage.jsx
+
 import React from "react";
 import Cart from "../../components/Cart/Cart";
-import CartSummary from "../../components/Cart/CartSummary";
+import Summary from "../../components/Cart/Summary";
 
 import s from "./CartPage.module.css";
 
-const CartPage = ({ cart, deleteFromCart }) => {
+const CartPage = ({
+  cart,
+  deleteFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+}) => {
   return (
     <section>
       <div className="container">
         <div className={s.cartContainer}>
-          <Cart cart={cart} deleteFromCart={deleteFromCart} />
-          <CartSummary />
+          <Cart
+            cart={cart}
+            deleteFromCart={deleteFromCart}
+            increaseQuantity={increaseQuantity}
+            decreaseQuantity={decreaseQuantity}
+          />
+          <Summary />
         </div>
       </div>
     </section>
