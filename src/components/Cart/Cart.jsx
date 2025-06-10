@@ -49,8 +49,8 @@ const Cart = ({ cart, deleteFromCart, increaseQuantity, decreaseQuantity }) => {
               </div>
               <div className={s.itemInfoWrapper}>
                 <div className={s.cartInfo}>
-                  <p className={s.cartBrand}>{item.brand}</p>
                   <p className={s.cartTitle}>{item.title}</p>
+                  <p className={s.cartBrand}>{item.brand}</p>
                 </div>
                 <div>
                   <Counter

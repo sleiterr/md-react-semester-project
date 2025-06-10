@@ -22,7 +22,7 @@ const CartPage = ({
             increaseQuantity={increaseQuantity}
             decreaseQuantity={decreaseQuantity}
           />
-          <Summary />
+          <Summary cart={cart} />
         </div>
       </div>
     </section>

@@ -18,22 +18,12 @@
   gap: 22px;
 
   width: 860px;
-  min-height: 700px;
+  min-height: 760px;
   max-height: 100%;
   border-radius: 12px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   /* outline: 1px solid red; */
-}
-
-.summaryBox {
-  width: 425px;
-  min-height: 700px;
-  max-height: 100%;
-
-  border-radius: 12px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
 .cartCaption {
@@ -160,7 +150,7 @@
   color: #333;
 
   border-radius: 50%;
-  border: 1px solid rgb(51, 51, 51, 0.20);
+  border: 1px solid rgb(51, 51, 51, 0.2);
   width: 50px;
   height: 50px;
 }
@@ -172,7 +162,7 @@
 
   letter-spacing: 0.04em;
 
-  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
 .cartTitle {
@@ -219,11 +209,179 @@
 /*! CART-SUMMARY */
 /*******************************/
 
+.summaryBox {
+  width: 425px;
+  min-height: 700px;
+  height: 100%;
+
+  padding: 15px 22px;
+  border-radius: 12px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.sumList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  height: 100%;
+  padding-top: 20px;
+}
+
+.sumList::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 380px;
+  height: 2px;
+
+  background-color: rgb(51, 51, 51, 0.1);
+}
+
 .summaryTitle {
   font-weight: 500;
   font-size: 22px;
   color: #333;
 
   letter-spacing: 0.04em;
-  padding: 15px 0 0 15px;
+}
+
+.price {
+  margin-bottom: 12px;
+}
+
+.shipping,
+.total,
+.price {
+  font-weight: 600;
+  font-size: 22px;
+  color: #333;
+
+  letter-spacing: 0.04em;
+}
+.shipping {
+  padding-bottom: 12px;
+}
+
+.priceItem,
+.shipItem,
+.totalItem {
+  font-weight: 500;
+  font-size: 22px;
+  color: #333;
+
+  letter-spacing: 0.06em;
+}
+
+.totalPrice {
+  position: relative;
+  margin-top: auto;
+  padding-bottom: 22px;
+}
+
+.totalPrice::before {
+  content: "";
+  position: absolute;
+  bottom: 60px;
+  width: 380px;
+  height: 2px;
+
+  background-color: rgb(51, 51, 51, 0.1);
+}
+
+.masterIcon {
+  width: 60px;
+  height: 30px;
+  background-color: rgb(51, 51, 51, 0.1);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.visaIcon {
+  width: 60px;
+  height: 30px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.summaryWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  height: 580px;
+}
+
+.orderActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: auto;
+
+  width: 100%;
+}
+
+.iconBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 16px;
+}
+
+.btnBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-weight: 500;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 0.08em;
+
+  width: 380px;
+  height: 50px;
+  /* padding: 14px 125px; */
+  background-color: #000;
+  text-transform: uppercase;
+}
+
+.confirmBtn:hover {
+  transition: 250ms ease;
+  background-color: #252525;
+}
+
+.paymentIcon {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+}
+
+.iconTitle {
+  font-weight: 400;
+  font-size: 14px;
+  color: #333;
+
+  letter-spacing: 0.02em;
+}
+
+.paymentLogo {
+  display: flex;
+
+  gap: 18px;
 }
