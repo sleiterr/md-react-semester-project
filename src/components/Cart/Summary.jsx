@@ -59,18 +59,21 @@ const CartSummary = ({ cart }) => {
               : `$${shippingFree.toFixed(2)}`}
           </p>
           {discount && discount.type !== "Free Shipping" && (
-            <div style={{ height: "20px" }}>
+            <div style={{ height: "20px", width: "100%" }}>
               <p
                 style={{
-                  fontSize: "22px",
+                  display: "flex",
+                  justifyContent: "space-between",
                   fontWeight: "600",
+                  fontSize: "22px",
+                  color: "#333",
                   letterSpacing: "0.04em",
                 }}
               >
                 <span
                   style={{
                     fontSize: "22px",
-                    fontWeight: "400",
+                    fontWeight: "500",
                     letterSpacing: "0.06em",
                   }}
                 >

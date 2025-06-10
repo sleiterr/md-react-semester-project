@@ -227,6 +227,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 
+  width: 100%;
   height: 100%;
   padding-top: 20px;
 }
@@ -250,12 +251,17 @@
 }
 
 .price {
-  margin-bottom: 12px;
+  margin-bottom: 22px;
 }
 
 .shipping,
 .total,
 .price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
   font-weight: 600;
   font-size: 22px;
   color: #333;
@@ -263,7 +269,7 @@
   letter-spacing: 0.04em;
 }
 .shipping {
-  padding-bottom: 12px;
+  padding-bottom: 22px;
 }
 
 .priceItem,
@@ -280,6 +286,8 @@
   position: relative;
   margin-top: auto;
   padding-bottom: 22px;
+
+  width: 100%;
 }
 
 .totalPrice::before {

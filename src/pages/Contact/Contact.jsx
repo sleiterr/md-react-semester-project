@@ -1,12 +1,52 @@
 import React from "react";
+import ContactForm from "../../components/ContactForm/ContactForm";
 import s from "./Contact.module.css";
 
 const Contact = () => {
   return (
     <section>
-      <div className={`${s.contactContainer} container`}>
-        <div className={s.conactContent}>
-          <h2 className={s.contactTitle}>Contact</h2>
+      <div className="container">
+        <div className={s.contactContainer}>
+          <div className={s.formContainer}>
+            <div className={s.descContact}>
+              <div className={s.contactContent}>
+                <h4 className={s.titleContact}>We're here to help you</h4>
+                <h2 className={s.captionContact}>
+                  Your <span className={s.textSpan}>MiniShop</span> for Beauty,
+                  Fragrances, Furniture & Groceries
+                </h2>
+                <p className={s.textContact}>
+                  This is a semester project created to showcase modern web
+                  development skills. Feel free to browse and enjoy!
+                </p>
+              </div>
+              <div className={s.contactInfo}>
+                <ul className={s.contactList}>
+                  <li className={s.conatctItem}>
+                    <a
+                      href="mailto:minishop@gmail.com"
+                      className={s.contactLink}
+                    >
+                      minishop@gmail.com
+                    </a>
+                  </li>
+                  <li className={s.conatctItem}>
+                    <a
+                      href="tel:+45 99 99 99 99"
+                      className={s.contactLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      +45 99 99 99 99
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className={s.formBox}>
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </div>
     </section>
