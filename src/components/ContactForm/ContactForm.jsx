@@ -21,6 +21,11 @@ const ContactForm = () => {
 
   return (
     <form className={s.form} onSubmit={formik.handleSubmit}>
+      <div className={s.error}>
+        {formik.touched.name && formik.errors.name
+          ? formik.errors.name
+          : "\u00A0"}
+      </div>
       <input
         name="name"
         type="text"
@@ -31,9 +36,11 @@ const ContactForm = () => {
         className={s.input}
         required
       />
-      {formik.touched.name && formik.errors.name && (
-        <div className={s.error}>{formik.errors.name}</div>
-      )}
+      <div className={s.error}>
+        {formik.touched.email && formik.errors.email
+          ? formik.errors.email
+          : "\u00A0"}
+      </div>
       <input
         name="email"
         type="email"
@@ -44,9 +51,11 @@ const ContactForm = () => {
         className={s.input}
         required
       />
-      {formik.touched.email && formik.errors.email && (
-        <div className={s.error}>{formik.errors.email}</div>
-      )}
+      <div className={s.error}>
+        {formik.touched.message && formik.errors.message
+          ? formik.errors.message
+          : "\u00A0"}
+      </div>
       <textarea
         name="message"
         type="text"
@@ -57,9 +66,6 @@ const ContactForm = () => {
         className={s.textarea}
         required
       />
-      {formik.touched.message && formik.errors.message && (
-        <div className={s.error}>{formik.errors.message}</div>
-      )}
       <button type="submit" className={s.formBt}>
         Send
       </button>

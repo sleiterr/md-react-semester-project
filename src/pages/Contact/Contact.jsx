@@ -1,5 +1,7 @@
 import React from "react";
+import { MdEmail } from "react-icons/md";
 import ContactForm from "../../components/ContactForm/ContactForm";
+import { FaPhoneAlt } from "react-icons/fa";
 import s from "./Contact.module.css";
 
 const Contact = () => {
@@ -23,6 +25,7 @@ const Contact = () => {
               <div className={s.contactInfo}>
                 <ul className={s.contactList}>
                   <li className={s.conatctItem}>
+                    <MdEmail className={s.contactIcon} />
                     <a
                       href="mailto:minishop@gmail.com"
                       className={s.contactLink}
@@ -31,6 +34,7 @@ const Contact = () => {
                     </a>
                   </li>
                   <li className={s.conatctItem}>
+                    <FaPhoneAlt className={s.contactIcon} />
                     <a
                       href="tel:+45 99 99 99 99"
                       className={s.contactLink}
