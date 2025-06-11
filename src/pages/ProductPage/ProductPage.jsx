@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ProductList from "../../components/ProductList/ProductList";
 import Pagination from "../../components/Pagination/Pagination";
 import FilterPanel from "../../components/FilterPanel/FilterPanel";
-import ProductDetail from "../ProductDetail/ProductDetail";
 
 import s from "./ProductPage.module.css";
 

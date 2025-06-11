@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import ProductPage from "./pages/ProductPage/ProductPage";
-import Home from "./pages/Home/Home";
-import FeatureSection from "./components/FeatureSection/FeatureSection";
-import Contact from "./pages/Contact/Contact";
 import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import Contact from "./pages/Contact/Contact";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import CartPage from "./pages/CartPage/CartPage";
+import Footer from "./components/Footer/Footer";
 import CookieBanner from "./components/Cookie/CookieBanner";
 import "./App.css";
 
@@ -98,7 +98,7 @@ function App() {
             }
           />
         </Routes>
-        <FeatureSection />
+        <Footer />
       </main>
     </>
   );

@@ -52,7 +52,9 @@ const Header = ({ cartCount }) => {
 
         <nav className={s.navBar}>
           <div className={s.logoNav}>
-            <p className={s.logo}>MiniShop</p>
+            <Link to="/">
+              <p className={s.logo}>MiniShop</p>
+            </Link>
           </div>
           <ul className={s.navList}>
             <li className={s.listItem}>
