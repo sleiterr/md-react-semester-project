@@ -7,11 +7,12 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import s from "./Header.module.css";
 
-const Header = ({ cartCount }) => {
+const Header = ({ cartCount, showOnlyFavorites, setShowOnlyFavorites }) => {
   const [menuOpen, setmenuOpen] = useState(false);
 
   return (
@@ -73,11 +74,22 @@ const Header = ({ cartCount }) => {
                 Contact
               </Link>
             </li>
-            <li className={s.listItem}></li>
           </ul>
           <div className={s.cartBox}>
+            <div className={s.likeBox}>
+              <button
+                type="button"
+                aria-pressed={showOnlyFavorites}
+                onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
+                className={`${s.likeButton} ${
+                  showOnlyFavorites ? s.active : ""
+                }`}
+              >
+                <FaHeart className={s.likeIcon} />
+              </button>
+            </div>
             <Link to="/cart" className={s.cartLink}>
-              <HiOutlineShoppingBag className={s.cartItem} />
+              <HiOutlineShoppingBag className={s.cartIcon} />
               {cartCount > 0 && (
                 <span className={s.cartCount}>{cartCount}</span>
               )}

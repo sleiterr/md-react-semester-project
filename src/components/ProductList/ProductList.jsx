@@ -28,7 +28,7 @@ const ProductList = ({ products, favoriteIds, toggleFavorite }) => {
                   {isFavorite ? <FcLike /> : <FcLikePlaceholder />}
                 </button>
               </div>
-              <Link to={`/product-detail/${prod.id}`}>
+              <Link className={s.listContent} to={`/product-detail/${prod.id}`}>
                 <img
                   src={prod.thumbnail}
                   alt={prod.title}
@@ -36,15 +36,7 @@ const ProductList = ({ products, favoriteIds, toggleFavorite }) => {
                 />
                 <div className={s.productsContent}>
                   <div className={s.productDesc}>
-                    <div className={s.cardSubject}>
-                      <h3 className={s.productTitle}>{prod.title}</h3>
-                      <p className={s.ratingProducts}>{prod.rating}</p>
-                    </div>
-                    <div className={s.katBox}>
-                      <p className={s.kategory}>{prod.category}</p>
-                    </div>
-                  </div>
-                  <div className={s.priceBox}>
+                    <h3 className={s.productTitle}>{prod.title}</h3>
                     <p className={s.priceProducts}>${prod.price}</p>
                   </div>
                 </div>

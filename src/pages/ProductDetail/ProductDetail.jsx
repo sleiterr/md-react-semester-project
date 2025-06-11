@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { IoCheckmark } from "react-icons/io5";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { LiaShippingFastSolid } from "react-icons/lia";
+import { IoIosStarOutline } from "react-icons/io";
 
 import { useParams, Link } from "react-router-dom";
 import s from "./ProductDetail.module.css";
@@ -26,6 +27,13 @@ const ProductDetail = ({ addToCart }) => {
     };
     fetchProduct();
   }, [id]);
+
+  const stars = Array(5).fill(0);
+
+  const colors = {
+    orange: "#F2C265",
+    grey: "a9a9a9",
+  };
 
   if (loading) return <p>Loading...</p>;
   if (error || !product) return <p>Product not found ☹️</p>;
@@ -72,9 +80,16 @@ const ProductDetail = ({ addToCart }) => {
                 <IoCheckmark className={s.checkMark} />
               </p>
             </div>
-            <div className={s.descRat}>
-              <p className={s.rating}>{product.rating}</p>
-              <p className={s.category}>{product.category}</p>
+            <div className={s.rating}>
+              {stars.map((_, index) => (
+                <IoIosStarOutline
+                  key={index}
+                  size={36}
+                  color={product.rating > index ? colors.orange : colors.grey}
+                />
+              ))}
+
+              {/* <p className={s.rating}>{product.rating}</p> */}
             </div>
             <div className={s.descDet}>
               <p className={s.description}>{product.description}</p>
@@ -88,6 +103,12 @@ const ProductDetail = ({ addToCart }) => {
                 <HiOutlineShoppingBag className={s.productIcon} />
               </button>
             </div>
+            <div className={s.descCat}>
+              <p className={s.category}>
+                <span className={s.categoryItem }>Category:</span> {product.category}
+              </p>
+            </div>
+
             <div className={s.shippingInfo}>
               <p className={s.shippingDesc}>
                 <LiaShippingFastSolid className={s.shippingIcon} />

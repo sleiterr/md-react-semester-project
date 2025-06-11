@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductList from "../../components/ProductList/ProductList";
 import Pagination from "../../components/Pagination/Pagination";
+
 import FilterPanel from "../../components/FilterPanel/FilterPanel";
 
 import s from "./ProductPage.module.css";
@@ -11,7 +12,7 @@ import {
 } from "../../utils/localStorage";
 
 /* { cart, addToCart } */
-const ProductPage = () => {
+const ProductPage = ({ showOnlyFavorites, setShowOnlyFavorites }) => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -19,7 +20,7 @@ const ProductPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortOption, setSortOption] = useState("");
-  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
+  // const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
   //Favorite with localStorage
   const [favoriteIds, setFavoriteId] = useState(getFavoritesFromStorage);
@@ -57,7 +58,7 @@ const ProductPage = () => {
 
   function resetFilters() {
     setSearchTerm("");
-    setSelectedCategory("");
+    setSelectedCategory("all");
     setSortOption("");
     setShowOnlyFavorites("");
     setCurrentPage(1);
@@ -106,44 +107,46 @@ const ProductPage = () => {
 
   return (
     <section>
-      <div className={`${s.productsContainer}`}>
-        <FilterPanel
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          categories={categories}
-          sortOption={sortOption}
-          setSortOption={setSortOption}
-          showOnlyFavorites={showOnlyFavorites}
-          setShowOnlyFavorites={setShowOnlyFavorites}
-          resetFilters={resetFilters}
-        />
+      <div className="container">
+        <div className={`${s.productsContainer}`}>
+          <FilterPanel
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            categories={categories}
+            sortOption={sortOption}
+            setSortOption={setSortOption}
+            showOnlyFavorites={showOnlyFavorites}
+            setShowOnlyFavorites={setShowOnlyFavorites}
+            resetFilters={resetFilters}
+          />
 
-        {loading && <p>Loader produkter...</p>}
-        {error && <p className={s.error}>Fejl: {error}</p>}
+          {loading && <p>Loader produkter...</p>}
+          {error && <p className={s.error}>Fejl: {error}</p>}
 
-        {!loading && !error && filteredProducts.length === 0 && (
-          <p>No products found</p>
-        )}
+          {!loading && !error && filteredProducts.length === 0 && (
+            <p>No products found</p>
+          )}
 
-        {!loading && !error && (
-          <>
-            <ProductList
-              products={pageProducts}
-              favoriteIds={favoriteIds}
-              toggleFavorite={toggleFavorite}
-            />
+          {!loading && !error && (
+            <>
+              <ProductList
+                products={pageProducts}
+                favoriteIds={favoriteIds}
+                toggleFavorite={toggleFavorite}
+              />
 
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              setCurrentPage={setCurrentPage}
-            />
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                setCurrentPage={setCurrentPage}
+              />
 
-            {/* <ProductDetail cart={cart} addToCart={addToCart} /> */}
-          </>
-        )}
+              {/* <ProductDetail cart={cart} addToCart={addToCart} /> */}
+            </>
+          )}
+        </div>
       </div>
     </section>
   );

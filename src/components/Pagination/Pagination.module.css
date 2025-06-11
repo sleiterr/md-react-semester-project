@@ -2,9 +2,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  gap: 22px;
+  margin-top: 60px;
 }
 
 .btnPagination {
-  font-weight: 500;
-  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #000;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #fff;
+}
+
+.arrowLeft {
+  transform: rotate(180deg);
+}
+
+.coutenrPages {
+  font-size: 16px;
+  color: #333;
 }

@@ -10,27 +10,31 @@
   align-items: center;
   justify-content: center;
 
-  gap: 40px;
+  gap: 25px;
 }
 
 .listItem {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-
-  border-radius: 12px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
+.listContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 120px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  width: 290px;
+  height: 420px;
+}
+
 .productImage {
   /* outline: 1px solid #aaa; */
-  width: 400px;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px 12px 0 0px;
 }
 
 .productsContent {
@@ -40,36 +44,27 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 56px;
+  gap: 0px;
 
-  width: 400px;
-  height: auto;
   border-radius: 0px 0px 12px 12px;
-  padding: 25px 20px;
+  padding: 12px 16px;
 }
 
 .productDesc {
   display: flex;
   flex-direction: column;
-
-  width: 100%;
-}
-
-.katBox {
-  padding-top: 12px;
-}
-
-.cardSubject {
-  display: flex;
   justify-content: space-between;
-}
 
+  height: 90%;
+}
 
 .kategory {
   font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 0.04em;
+  font-size: 14px;
+  letter-spacing: 0.06em;
   color: rgb(51, 51, 51, 0.6);
+
+  margin-bottom: 6px;
 }
 
 /* .cardSubject {
@@ -83,23 +78,20 @@
   font-weight: 500;
   font-size: 22px;
   color: #333;
-  letter-spacing: 0.06em;
-  line-height: 24px;
-
-  width: 80%;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
 }
 
 .priceProducts {
   font-weight: 500;
-  font-size: 32px;
+  font-size: 22px;
   color: #333;
   letter-spacing: 0.04em;
-
 }
 
 .ratingProducts {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
 
   color: #333;
 }
@@ -114,7 +106,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 42px;
+  font-size: 32px;
   background-color: white;
   box-shadow: rgba(99, 99, 99, 0.2) 6px 4px 12px 0px;
   padding: 8px;

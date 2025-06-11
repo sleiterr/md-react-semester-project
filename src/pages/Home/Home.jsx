@@ -21,8 +21,8 @@ const Home = () => {
         const data = await res.json();
 
         const filtered = data.products
-          .filter((p) => p.category === "beauty")
-          .slice(0, 5);
+          .filter((p) => p.category === "fragrances")
+          .slice(0, 4);
 
         setProducts(filtered);
       } catch (err) {

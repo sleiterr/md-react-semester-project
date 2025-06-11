@@ -1,4 +1,4 @@
-.header {
+listItem.header {
   position: relative;
 
   z-index: 10;
@@ -55,8 +55,8 @@
   letter-spacing: 0.04em;
 }
 
-.cartItem {
-  font-size: 46px;
+.cartIcon {
+  font-size: 36px;
   color: #333;
 }
 
@@ -64,7 +64,42 @@
 }
 
 .cartBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
   padding: 16px 0;
+}
+
+.likeIcon {
+  font-size: 36px;
+}
+
+.likeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.likeButton:hover {
+  transform: scale(1.1);
+}
+
+.likeButton svg {
+  font-size: 26px;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.active svg {
+  color: crimson;
 }
 
 .cartLink {
@@ -73,8 +108,8 @@
 
 .cartCount {
   position: absolute;
-  bottom: 9px;
-  right: 13px;
+  bottom: 4px;
+  right: 7px;
 
   font-weight: 600;
   font-size: 1.6rem;

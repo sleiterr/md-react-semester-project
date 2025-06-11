@@ -3,5 +3,88 @@
   align-items: center;
   justify-content: center;
 
+  gap: 16px;
   margin-bottom: 60px;
+}
+
+.inputFilter {
+  font-weight: 400;
+  font-size: 14px;
+  color: #333;
+  letter-spacing: 0.04em;
+
+  width: 100%;
+  max-width: 190px;
+  min-width: 260px;
+  min-height: 40px;
+  background-color: #f5f5f5;
+  padding: 0.15rem 0.8rem;
+
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.15);
+}
+
+.inputFilter:focus {
+  border-bottom: 2px solid #333;
+  border-radius: 4px 4px 2px 2px;
+}
+
+.inputFilter:hover {
+  outline: 1px solid lightgrey;
+}
+
+.selectFilter,
+.sortFilter {
+  font-weight: 400;
+  font-size: 14px;
+  color: #333;
+  letter-spacing: 0.04em;
+
+  width: 100%;
+  max-width: 120px;
+  min-width: 60px;
+  min-height: 40px;
+  background-color: #f5f5f5;
+  padding: 0.15rem 0.8rem;
+
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.15);
+}
+
+.sortFilter {
+  width: 100%;
+  max-width: 160px;
+  min-width: 120px;
+  min-height: 40px;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.filterBtn {
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.02em;
+
+  padding: 10px 18px;
+  background-color: #000;
+}
+
+.checkBoxLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.checkBoxText {
+  font-weight: 400;
+  font-size: 16px;
+  color: #333;
+
+  letter-spacing: 0.04em;
 }

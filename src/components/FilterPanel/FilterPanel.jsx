@@ -9,8 +9,8 @@ const FilterPanel = ({
   categories,
   sortOption,
   setSortOption,
-  showOnlyFavorites,
-  setShowOnlyFavorites,
+  // showOnlyFavorites,
+  // setShowOnlyFavorites,
   resetFilters,
 }) => {
   return (
@@ -20,12 +20,12 @@ const FilterPanel = ({
         placeholder="Search products..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className={s.input}
+        className={s.inputFilter}
       />
       <select
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
-        className={s.select}
+        className={s.selectFilter}
       >
         <option value="all">Alle kategorie</option>
         {categories.map((cat) => (
@@ -38,7 +38,7 @@ const FilterPanel = ({
       <select
         value={sortOption}
         onChange={(e) => setSortOption(e.target.value)}
-        className={s.select}
+        className={s.sortFilter}
       >
         <option value="">Sort by</option>
         <option value="priceAsc">Price (Low to high)</option>
@@ -47,15 +47,20 @@ const FilterPanel = ({
         <option value="alphaDesc">Z-A</option>
         <option value="ratingDesc">Rating</option>
       </select>
+      
+      <button className={s.filterBtn} onClick={resetFilters}>
+        Reset filters
+      </button>
 
-      <label className={s.checkBoxLabel}>
+      {/* <label className={s.checkBoxLabel}>
         <input
           type="checkbox"
           checked={showOnlyFavorites}
-          onChange={(e) => setShowOnlyFavorites(e.target.value)}
+          onChange={(e) => setShowOnlyFavorites(e.target.checked)}
+          className={s.checked}
         />
-      </label>
-      <button onClick={resetFilters}>Reset filters</button>
+        <span className={s.checkBoxText }>Show favorites only</span>
+      </label> */}
     </div>
   );
 };

@@ -1,0 +1,15 @@
+.proposesContainer {
+  padding: 120px 0;
+}
+
+.propSubject {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.propTitle {
+  font-weight: 500;
+  font-size: 42px;
+  color: #333;
+  letter-spacing: 0.06em;
+}

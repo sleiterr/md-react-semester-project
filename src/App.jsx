@@ -20,6 +20,8 @@ function App() {
   // Cart with localStorage
   const [cart, setCart] = useState(getCartFromStorage());
 
+  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
+
   useEffect(() => {
     saveCartToStorage(cart);
   }, [cart]);
@@ -73,6 +75,8 @@ function App() {
           (total, item) => total + (item.quantity || 1),
           0
         )}
+        showOnlyFavorites={showOnlyFavorites}
+        setShowOnlyFavorites={setShowOnlyFavorites}
       />
 
       <CookieBanner />
@@ -80,7 +84,15 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product-page" element={<ProductPage />} />
+          <Route
+            path="/product-page"
+            element={
+              <ProductPage
+                showOnlyFavorites={showOnlyFavorites}
+                setShowOnlyFavorites={setShowOnlyFavorites}
+              />
+            }
+          />
           <Route path="/contact" element={<Contact />} />
           <Route
             path="/product-detail/:id"
