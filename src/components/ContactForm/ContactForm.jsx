@@ -1,4 +1,5 @@
 import React from "react";
+import { RiMailSendLine } from "react-icons/ri";
 import * as Yup from "yup";
 import { Formik, useFormik } from "formik";
 import s from "./ContactForm.module.css";
@@ -13,8 +14,11 @@ const ContactForm = () => {
     }),
 
     onSubmit: (value, { resetForm }) => {
+      if (!formik.isValid) {
+        return;
+      }
       console.log("Form submitted via Formik:", value);
-      alert("Thank you for your message!");
+      alert(`Thank you ${value.name} for your message !`);
       resetForm();
     },
   });
@@ -67,7 +71,7 @@ const ContactForm = () => {
         required
       />
       <button type="submit" className={s.formBt}>
-        Send
+        Send <RiMailSendLine className={s.formIcon} />
       </button>
     </form>
   );

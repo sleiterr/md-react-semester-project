@@ -7,6 +7,7 @@ import Contact from "./pages/Contact/Contact";
 import Header from "./components/Header/Header";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import CartPage from "./pages/CartPage/CartPage";
+import CookieBanner from "./components/Cookie/CookieBanner";
 import "./App.css";
 
 import {
@@ -72,6 +73,8 @@ function App() {
           0
         )}
       />
+
+      <CookieBanner />
 
       <main>
         <Routes>

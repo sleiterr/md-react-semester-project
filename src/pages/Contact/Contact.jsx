@@ -18,8 +18,8 @@ const Contact = () => {
                   Fragrances, Furniture & Groceries
                 </h2>
                 <p className={s.textContact}>
-                  This is a semester project created to showcase modern web
-                  development skills. Feel free to browse and enjoy!
+                  Have questions or need assistance? Our team is ready to help
+                  you with your MiniShop experience.
                 </p>
               </div>
               <div className={s.contactInfo}>

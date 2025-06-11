@@ -92,12 +92,28 @@
 }
 
 .formBt {
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 18px;
   color: #fff;
+  letter-spacing: 0.04em;
 
   background-color: #000;
-  padding: 12px 60px;
+  padding: 8px 60px;
 
   margin-top: 26px;
   align-self: flex-start;
+  box-shadow: rgba(0, 0, 0, 0.22) 6px 4px 4px;
+}
+
+.formBt:hover {
+  transition: 250ms ease;
+  background-color: #252525;
+}
+
+.formIcon {
+  font-size: 22px;
 }

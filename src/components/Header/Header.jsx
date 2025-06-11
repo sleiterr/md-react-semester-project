@@ -20,6 +20,9 @@ const Header = ({ cartCount }) => {
       <BurgerMenu isOpen={menuOpen} onClose={() => setmenuOpen(false)} />
 
       <nav className={s.navBar}>
+        <div className={s.logoNav}>
+          <p className={s.logo}>MiniShop</p>
+        </div>
         <ul className={s.navList}>
           <li className={s.listItem}>
             <Link className={s.navLink} to="/">
