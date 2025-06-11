@@ -123,6 +123,69 @@
   text-decoration: underline;
 }
 
+/**====================*/
+/*? HEADER-BANNER */
+/**====================*/
+
+.headerBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+  background-color: black;
+}
+
+.deliveryInfo {
+  padding: 5px 0;
+}
+
+.deliveryText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.deliveryIcon {
+  font-size: 26px;
+}
+
+.bannerList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.bannerItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.bannerIcon {
+  font-size: 14px;
+  color: #fff;
+}
+
+.bannerContact {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+
+  letter-spacing: 0.06em;
+}
+
 @media (max-width: 992px) {
   .navBar {
     display: none;

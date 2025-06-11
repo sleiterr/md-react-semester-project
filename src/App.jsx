@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import ProductPage from "./pages/ProductPage/ProductPage";
 import Home from "./pages/Home/Home";
+import FeatureSection from "./components/FeatureSection/FeatureSection";
 import Contact from "./pages/Contact/Contact";
 import Header from "./components/Header/Header";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
@@ -97,6 +98,7 @@ function App() {
             }
           />
         </Routes>
+        <FeatureSection />
       </main>
     </>
   );
