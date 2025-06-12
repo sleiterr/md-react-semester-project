@@ -12,7 +12,12 @@ import { Link } from "react-router-dom";
 
 import s from "./Header.module.css";
 
-const Header = ({ cartCount, showOnlyFavorites, setShowOnlyFavorites }) => {
+const Header = ({
+  cartCount,
+  showOnlyFavorites,
+  setShowOnlyFavorites,
+  setCurrentPage,
+}) => {
   const [menuOpen, setmenuOpen] = useState(false);
 
   return (
@@ -65,7 +70,14 @@ const Header = ({ cartCount, showOnlyFavorites, setShowOnlyFavorites }) => {
             </li>
 
             <li className={s.listItem}>
-              <Link className={s.navLink} to="/product-page">
+              <Link
+                className={s.navLink}
+                to="/product-page"
+                onClick={() => {
+                  setShowOnlyFavorites(false);
+                  setCurrentPage(1);
+                }}
+              >
                 Shop
               </Link>
             </li>
@@ -80,7 +92,13 @@ const Header = ({ cartCount, showOnlyFavorites, setShowOnlyFavorites }) => {
               <button
                 type="button"
                 aria-pressed={showOnlyFavorites}
-                onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
+                onClick={() => {
+                  const newValue = !showOnlyFavorites;
+                  setShowOnlyFavorites(newValue);
+                  if (!newValue) {
+                    setCurrentPage(1);
+                  }
+                }}
                 className={`${s.likeButton} ${
                   showOnlyFavorites ? s.active : ""
                 }`}

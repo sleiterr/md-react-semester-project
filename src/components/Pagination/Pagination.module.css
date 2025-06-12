@@ -17,6 +17,11 @@
   border-radius: 4px;
 }
 
+.btnPagination:hover {
+  transition: 250ms ease;
+  background-color: #252525;
+}
+
 .arrow {
   font-size: 18px;
   color: #fff;

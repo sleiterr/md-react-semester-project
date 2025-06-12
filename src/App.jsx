@@ -20,6 +20,9 @@ function App() {
   // Cart with localStorage
   const [cart, setCart] = useState(getCartFromStorage());
 
+  //Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
   useEffect(() => {
@@ -90,6 +93,8 @@ function App() {
               <ProductPage
                 showOnlyFavorites={showOnlyFavorites}
                 setShowOnlyFavorites={setShowOnlyFavorites}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
               />
             }
           />

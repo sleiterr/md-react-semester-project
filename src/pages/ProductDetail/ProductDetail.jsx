@@ -3,6 +3,7 @@ import { IoCheckmark } from "react-icons/io5";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { IoIosStarOutline } from "react-icons/io";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 import { useParams, Link } from "react-router-dom";
 import s from "./ProductDetail.module.css";
@@ -46,8 +47,8 @@ const ProductDetail = ({ addToCart }) => {
         <div className={s.productLink}>
           <ul className={s.linkList}>
             <li className={s.productNav}>
-              <Link className={s.productNavLink} to="/">
-                Home
+              <Link className={`${s.productNavLink} ${s.iconLink}`} to="/">
+                Home <IoIosArrowRoundForward className={s.iconArrow} />
               </Link>
             </li>
             <li className={s.productNav}>
@@ -61,7 +62,7 @@ const ProductDetail = ({ addToCart }) => {
           <div>
             <img
               className={s.detailImg}
-              src={product.images?.[0]}
+              src={product.images?.[2] || product.images?.[0]}
               alt={product.title}
             />
           </div>
@@ -105,7 +106,8 @@ const ProductDetail = ({ addToCart }) => {
             </div>
             <div className={s.descCat}>
               <p className={s.category}>
-                <span className={s.categoryItem }>Category:</span> {product.category}
+                <span className={s.categoryItem}>Category:</span>{" "}
+                {product.category}
               </p>
             </div>
 

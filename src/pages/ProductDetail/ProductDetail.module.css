@@ -202,7 +202,19 @@
   align-items: center;
   justify-content: flex-end;
 
-  gap: 30px;
+  gap: 22px;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.iconArrow {
+  font-size: 28px;
 }
 
 .productNavLink {
@@ -210,4 +222,9 @@
   font-size: 18px;
   color: #333;
   letter-spacing: 0.06em;
+}
+
+.productNavLink:hover {
+  color: #ff91a3;
+  transition: 250 ease;
 }

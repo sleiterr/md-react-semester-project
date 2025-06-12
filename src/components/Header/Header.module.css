@@ -55,6 +55,11 @@ listItem.header {
   letter-spacing: 0.04em;
 }
 
+.navLink:hover {
+  transition: 250 ease;
+  color: #ff91a3;
+}
+
 .cartIcon {
   font-size: 36px;
   color: #333;

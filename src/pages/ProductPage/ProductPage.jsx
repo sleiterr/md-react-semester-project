@@ -12,7 +12,12 @@ import {
 } from "../../utils/localStorage";
 
 /* { cart, addToCart } */
-const ProductPage = ({ showOnlyFavorites, setShowOnlyFavorites }) => {
+const ProductPage = ({
+  showOnlyFavorites,
+  setShowOnlyFavorites,
+  currentPage,
+  setCurrentPage,
+}) => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -24,9 +29,6 @@ const ProductPage = ({ showOnlyFavorites, setShowOnlyFavorites }) => {
 
   //Favorite with localStorage
   const [favoriteIds, setFavoriteId] = useState(getFavoritesFromStorage);
-
-  //Pagination
-  const [currentPage, setCurrentPage] = useState(1);
 
   const itemsPerPage = 12;
 
