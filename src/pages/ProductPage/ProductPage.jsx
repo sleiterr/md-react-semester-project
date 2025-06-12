@@ -105,7 +105,7 @@ const ProductPage = ({
     if (currentPage > totalPages) {
       setCurrentPage(1);
     }
-  }, [filteredProducts, currentPage, totalPages]);
+  }, [filteredProducts, currentPage, setCurrentPage, totalPages]);
 
   return (
     <section>

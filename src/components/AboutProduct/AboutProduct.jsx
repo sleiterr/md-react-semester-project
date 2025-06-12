@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import s from "./AboutProduct.module.css";
 
-export const AboutProduct = ({ productsId }) => {
+const AboutProduct = ({ productsId, addToCart }) => {
   const [products, setProducts] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (productsId) return;
+    if (!productsId) return;
 
     const fetchProducts = async () => {
       try {
@@ -24,5 +25,40 @@ export const AboutProduct = ({ productsId }) => {
   if (loading) return <p>Reading</p>;
   if (!products) return <p>No products was found</p>;
 
-  return <div>AboutProduct</div>;
+  return (
+    <div className={s.aboutContainer}>
+      <div className={s.aboutContent}>
+        <div className={s.descAbout}>
+          <div className={s.aboutheading}>
+            <p className={s.aboutBrand}>Brand: {products.brand}</p>
+            <h2 className={s.aboutTitle}>{products.title}</h2>
+          </div>
+          <div className={s.aboutText}>
+            {/* <p className={s.aboutCat}>{products.tags[1]}</p> */}
+            <p className={s.aboutProd}>{products.description}</p>
+          </div>
+          <div className={s.aboutBtn}>
+            <p className={s.aboutPrice}>
+              Best Price: <span className={s.spanPrice}>${products.price}</span>
+            </p>
+            <button
+              className={s.aboutAddBtn}
+              onClick={() => addToCart(products)}
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div className={s.imgContainer}>
+          <img
+            className={s.aboutImg}
+            src={products.images[2]}
+            alt={products.title}
+          />
+        </div>
+      </div>
+    </div>
+  );
 };
+
+export default AboutProduct;

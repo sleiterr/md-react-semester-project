@@ -67,7 +67,7 @@ const ProductDetail = ({ addToCart }) => {
             />
           </div>
           <div className={s.descDetail}>
-            <div className="">
+            <div>
               <p className={s.brand}>{product.brand}</p>
             </div>
             <div className={s.subjectDet}>
@@ -107,7 +107,7 @@ const ProductDetail = ({ addToCart }) => {
             <div className={s.descCat}>
               <p className={s.category}>
                 <span className={s.categoryItem}>Category:</span>{" "}
-                {product.category}
+                {product.tags[1]}
               </p>
             </div>
 

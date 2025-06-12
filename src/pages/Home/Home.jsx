@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import FeatureSection from "../../components/FeatureSection/FeatureSection";
 import HerroImg from "../../assets/img-hero/gucci-blomm2.jpg";
 import BestProposes from "../../components/BestProposes/BestProposes";
+import AboutProduct from "../../components/AboutProduct/AboutProduct";
 import { BsShop } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import s from "./Home.module.css";
@@ -11,7 +12,7 @@ import {
   saveFavoritesToStorage,
 } from "../../utils/localStorage";
 
-const Home = () => {
+const Home = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
   const [favoriteIds, setFavoriteIds] = useState(getFavoritesFromStorage);
 
@@ -79,6 +80,11 @@ const Home = () => {
           favoriteIds={favoriteIds}
           toggleFavorite={toggleFavorite}
         />
+      </section>
+      <section className={s.aboutSection}>
+        <div className="container">
+          <AboutProduct productsId={8} addToCart={addToCart} />
+        </div>
       </section>
     </>
   );
