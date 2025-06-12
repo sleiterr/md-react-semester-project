@@ -74,17 +74,17 @@ const Home = ({ addToCart }) => {
       <section>
         <FeatureSection />
       </section>
+      <section className={s.aboutSection}>
+        <div className="container">
+          <AboutProduct productsId={8} addToCart={addToCart} />
+        </div>
+      </section>
       <section>
         <BestProposes
           products={products}
           favoriteIds={favoriteIds}
           toggleFavorite={toggleFavorite}
         />
-      </section>
-      <section className={s.aboutSection}>
-        <div className="container">
-          <AboutProduct productsId={8} addToCart={addToCart} />
-        </div>
       </section>
     </>
   );

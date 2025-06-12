@@ -8,6 +8,11 @@
 }
 
 .aboutSection {
+  background: radial-gradient(
+    circle,
+    rgba(135, 188, 212, 1) 0%,
+    rgba(202, 218, 222, 1) 50%
+  );
 }
 
 .heroContainer {
