@@ -1,3 +1,4 @@
+//FavoritLike
 const FAVORITES_KEY = "favoriteProductsIds";
 
 export function getFavoritesFromStorage() {
@@ -17,6 +18,9 @@ export function saveFavoritesToStorage(favorites) {
     console.error("Could not save favorites to localStorage", e);
   }
 }
+
+
+//ProductCart
 const PRODUCT_KEY = "CardProductsIds";
 
 export function getCartFromStorage() {

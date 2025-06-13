@@ -108,7 +108,7 @@ const ProductPage = ({
   }, [filteredProducts, currentPage, setCurrentPage, totalPages]);
 
   return (
-    <section>
+    <section className={ s.productPages}>
       <div className="container">
         <div className={`${s.productsContainer}`}>
           <FilterPanel

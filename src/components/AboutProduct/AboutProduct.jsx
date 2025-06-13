@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import s from "./AboutProduct.module.css";
 
 const AboutProduct = ({ productsId, addToCart }) => {
@@ -41,6 +42,12 @@ const AboutProduct = ({ productsId, addToCart }) => {
             <p className={s.aboutPrice}>
               Best Price: <span className={s.spanPrice}>${products.price}</span>
             </p>
+            <Link
+              className={`${s.aboutView}`}
+              to={`/product-detail/${products.id}`}
+            >
+              Learn more
+            </Link>
             <button
               className={s.aboutAddBtn}
               onClick={() => addToCart(products)}

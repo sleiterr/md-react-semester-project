@@ -1,7 +1,7 @@
 .sectionHero {
   background: radial-gradient(
     circle,
-    rgba(135, 188, 212, 1) 0%,
+    rgb(135, 188, 212) 0%,
     rgba(202, 218, 222, 1) 50%
   );
   min-height: 80vh; /* 80% висоти вікна браузера */

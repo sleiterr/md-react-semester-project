@@ -25,34 +25,33 @@
   margin-bottom: 30px;
 }
 
-/* .aboutBrand::after {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  left: 0px;
-  padding: 15px 60px;
-  border-radius: 24px;
-
-  background-color: springgreen;
-  z-index: -1;
-} */
-
 .aboutBrand {
-  position: relative;
   font-weight: 500;
   font-size: 16px;
-  color: tomato;
+  color: #02172f;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  padding: 0 0 26px 0;
+  padding: 0 0 14px 0;
   /* padding-bottom: 26px; */
 }
 
 .aboutTitle {
+  position: relative;
   font-weight: 700;
   font-size: 42px;
-  color: #333;
+  color: #02172f;
+}
+
+.aboutTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 120px;
+  height: 2px;
+
+  background-color: rgba(1, 13, 50, 0.2);
 }
 
 .aboutText {
@@ -61,7 +60,7 @@
 .aboutProd {
   font-weight: 400;
   font-size: 18px;
-  color: #333;
+  color: #02172f;
   letter-spacing: 0.06em;
   line-height: 1.3;
 
@@ -71,7 +70,7 @@
 .aboutPrice {
   font-weight: 400;
   font-size: 24px;
-  color: #333;
+  color: #02172f;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   line-height: 1.2;
@@ -87,7 +86,7 @@
   align-items: center;
   justify-content: center;
 
-  gap: 32px;
+  gap: 16px;
   margin-top: 32px;
 }
 
@@ -97,7 +96,23 @@
   color: #fff;
   letter-spacing: 0.04em;
   background-color: #000;
-  padding: 14px 52px;
+  padding: 14px 42px;
+}
+
+.aboutView {
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.04em;
+  background-color: #000;
+  padding: 14px 42px;
+
+  background-color: sandybrown;
+}
+
+.aboutView:hover {
+    transition: 250ms ease;
+  background-color: rgb(243, 180, 126);
 }
 
 .aboutAddBtn:hover {
@@ -107,7 +122,17 @@
 
 .imgContainer {
   border-radius: 12px;
-  background-color: rgb(255, 255, 255, 0.2);
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  /* background-color: rgb(255, 255, 255, 0.2); */
+  border-radius: 57% 43% 66% 34% / 25% 77% 23% 75%;
+  width: 100%;
+  height: 100%;
 }
 
 .aboutImg {
