@@ -5,7 +5,7 @@ import { PiPlus } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import s from "./Cart.module.css";
 
-const Cart = ({ cart, deleteFromCart, increaseQuantity, decreaseQuantity }) => {
+const Cart = ({ cart,deleteFromCart , increaseQuantity, decreaseQuantity }) => {
 
   const Counter = ({ quantity, onDecrease, onIncrease }) => (
     <div className={s.quantityBox}>

@@ -1,0 +1,71 @@
+{
+  "name": "MD Webshop",
+  "description": "React Webshop - Semesteropgave dokumentation",
+  "sidebar": [
+    {
+      "group": "📖 Kom i gang",
+      "pages": [
+        {
+          "title": "Willkommen",
+          "href": "/",
+          "icon": "rocket"
+        },
+        {
+          "title": "Projekt overblik",
+          "href": "/project-overview",
+          "icon": "search"
+        }
+      ]
+    },
+    {
+      "group": "🏗️ Arkitektur",
+      "pages": [
+        {
+          "title": "Projektstruktur",
+          "href": "/project-structure",
+          "icon": "folder"
+        },
+        {
+          "title": "Komponenter",
+          "href": "/components",
+          "icon": "layers"
+        },
+        {
+          "title": "Routing",
+          "href": "/routing",
+          "icon": "link"
+        }
+      ]
+    },
+    {
+      "group": "✨ Features",
+      "pages": [
+        {
+          "title": "Produkter & Filtrering",
+          "href": "/features-products",
+          "icon": "star"
+        },
+        {
+          "title": "Indkøbskurv",
+          "href": "/features-cart",
+          "icon": "shopping-cart"
+        },
+        {
+          "title": "Rabatkoder",
+          "href": "/features-discount",
+          "icon": "gift"
+        }
+      ]
+    },
+    {
+      "group": "🚀 Deployment",
+      "pages": [
+        {
+          "title": "GitHub & Publishing",
+          "href": "/deployment",
+          "icon": "cloud"
+        }
+      ]
+    }
+  ]
+}

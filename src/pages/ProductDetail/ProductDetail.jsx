@@ -33,7 +33,7 @@ const ProductDetail = ({ addToCart }) => {
 
   const colors = {
     orange: "#F2C265",
-    grey: "a9a9a9",
+    grey: "a9a9a9", 
   };
 
   if (loading) return <p>Loading...</p>;

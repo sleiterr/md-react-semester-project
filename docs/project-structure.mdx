@@ -1,0 +1,144 @@
+---
+title: Projektstruktur
+description: Mapper og komponenter oversicht
+---
+
+# 📁 Projektstruktur
+
+## Overordnet mappe-layout
+
+```
+md-react-semester-project/
+├── src/
+│   ├── components/           # Genanvendelige komponenter
+│   ├── pages/               # Sider (Home, Product, Cart, etc.)
+│   ├── Context/             # Global state (Context API)
+│   ├── utils/               # Helper funktioner
+│   ├── assets/              # Billeder og resources
+│   ├── App.jsx              # Hovedkomponent
+│   ├── main.jsx             # Entry point
+│   └── index.css             # Global styles
+├── docs/                    # docs.page dokumentation
+├── public/                  # Static files
+├── docs.json                # docs.page config
+├── package.json
+└── vite.config.js
+```
+
+## 📦 src/components
+
+Alle genanvendelige React komponenter:
+
+| Komponent | Formål |
+|-----------|--------|
+| **Header** | Navigation bar + burger menu |
+| **Cart** | Kurv indhold & resume |
+| **ProductList** | Grid af produkter |
+| **FilterPanel** | Kategori + sortering filter |
+| **Pagination** | Sidenumre hvis nødvendigt |
+| **ContactForm** | Kontaktformular (react-hook-form) |
+| **DiscountCode** | Input for rabatkode |
+| **CookieBanner** | GDPR cookie banner |
+| **Footer** | Sidefooter |
+
+Hver komponent har:
+- `ComponentName.jsx` - logik
+- `ComponentName.module.css` - styling (scoped)
+
+## 📄 src/pages
+
+Full-page komponenter (routes):
+
+| Side | URL | Formål |
+|------|-----|--------|
+| **Home** | `/` | Forside med hero + featured |
+| **ProductPage** | `/products` | Alle produkter med filter |
+| **ProductDetail** | `/products/:id` | Enkelt produkt detaljer |
+| **CartPage** | `/cart` | Indkøbskurv + checkout |
+| **Contact** | `/contact` | Kontaktformular |
+
+## 🎛️ src/Context
+
+Global state management med Context API:
+
+```
+Context/
+└── Context.jsx    # Henter API data + globale states
+```
+
+**Eksempel Context data:**
+```javascript
+- products: []
+- cart: []
+- favorites: []
+- filters: { category, searchTerm, sortBy }
+- discountCode: ""
+```
+
+## 🛠️ src/utils
+
+Helper funktioner:
+
+```
+utils/
+└── localStorage.js   # Funktioner til at gemme/hente fra localStorage
+```
+
+**Typisk indhold:**
+```javascript
+export const saveCart = (cart) => {...}
+export const loadCart = () => {...}
+export const saveFavorites = (favorites) => {...}
+export const loadFavorites = () => {...}
+```
+
+## 🖼️ src/assets
+
+Media ressourcer:
+
+```
+assets/
+├── img-hero/          # Hero billeder
+└── paymentLogo/       # Betalingsmetode logos
+```
+
+## 🔄 Data Flow Diagram
+
+```
+┌─────────────────┐
+│   DummyJSON     │
+│  API (Initial)  │
+└────────┬────────┘
+         │
+         v
+┌──────────────────┐
+│  Context.jsx     │
+│  (useState)      │
+└────────┬─────────┘
+         │
+    ┌────┴────┐
+    │          │
+    v          v
+┌─────────┐ ┌──────────────┐
+│ pages/  │ │ components/  │
+│ views  │ │ (dumb comps) │
+└─────────┘ └──────────────┘
+```
+
+## 📱 Routing Setup (package.json dependencies)
+
+```json
+{
+  "dependencies": {
+    "react": "^18.x",
+    "react-dom": "^18.x",
+    "react-router-dom": "^6.x",
+    "react-hook-form": "^7.x",
+    "react-icons": "^4.x"
+  }
+}
+```
+
+---
+
+**Næste:** Læs [Komponenter](/components) for at forstå hver komponenets ansvar.

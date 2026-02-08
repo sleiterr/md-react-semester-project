@@ -1,0 +1,94 @@
+---
+title: Projekt overblik
+description: Overblik over MD Webshop projektet
+---
+
+# Projekt overblik
+
+## 📌 Hvad er MD Webshop?
+
+MD Webshop er en komplet e-commerce løsning udviklet i **React** som del af en semesteropgave. Webshoppen henter produkter fra DummyJSON API og præsenterer dem i en responsiv, brugervenlig interface.
+
+## ✨ Hovedfunktionalitet
+
+### 🛍️ Produkter
+- Hent alle produkter fra `https://dummyjson.com/products`
+- Vis produkter i grid layout
+- Each produkt viser: billede, navn, pris, rating
+
+### 🔍 Filtrering & Søgning
+- **Filtrering efter kategori** (electronics, clothing, etc.)
+- **Søgning efter produktnavn**
+- **Sortering:** A-Z, Z-A, pris stigende/faldende, rating
+
+### 🛒 Indkøbskurv
+- Tilføj/fjern produkter
+- Justér antal
+- Beregn total pris
+- Gemmes i `localStorage` (persist mellem sessioner)
+
+### 💳 Checkout Features
+- **Rabatkoder:** `SAVE10`, `FREESHIP`, etc.
+- Beregn rabat automatisk
+- Vis endelig pris
+
+### ⭐ Favoritter
+- Mark produkter som favoritter
+- Gemmes i `localStorage`
+- Vis favoriterside
+
+### 📱 Responsivt Design
+- **Desktop:** Full layout
+- **Tablet:** Adapteret grid
+- **Mobil:** Burger menu navigationl
+
+### 🍪 Cookies & GDPR
+- Cookie banner ved første besøg
+- Gemt i `localStorage`
+
+## 🏗️ Teknologi Stack
+
+| Teknologi | Formål |
+|-----------|--------|
+| **React 18** | UI framework |
+| **React Router v6** | Side-navigation |
+| **React Hook Form** | Kontaktformular |
+| **React Icons** | UI Ikoner |
+| **Module CSS** | Styling (scoped) |
+| **localStorage** | Data persistence |
+| **fetch() API** | Data hentning |
+
+## 📊 API Integration
+
+Vi bruger **DummyJSON** APIet (gratis, ingen auth nødvendig):
+
+```javascript
+// Hent alle produkter
+const response = await fetch('https://dummyjson.com/products');
+const data = await response.json();
+
+// Hent en enkelt produkt
+const product = await fetch(`https://dummyjson.com/products/1`);
+```
+
+## 🎯 Learning Outcomes
+
+Efter gennemførelse af dette projekt kan du:
+
+✅ Bygge komponenter i React  
+✅ Bruge Hooks (useState, useEffect, useContext)  
+✅ Work med async data fra API  
+✅ Implementere routing med React Router  
+✅ Håndtere forms med libraries  
+✅ Gemme data i localStorage  
+✅ Style komponenter med Module CSS  
+✅ Tænke i responsive design  
+
+## 📅 Deadline
+
+- **Afleveringsfrist:** 12. juni 2025
+- **Præsentation:** 13. juni 2025 (15 min)
+
+---
+
+**Næste trin:** Læs [Projektstruktur](/project-structure) for at se hvordan komponenter er organiseret.

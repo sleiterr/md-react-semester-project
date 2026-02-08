@@ -1,0 +1,210 @@
+---
+title: Komponenter
+description: Detaljeret beskrivelse af alle komponenter
+---
+
+# 🧩 Komponenter
+
+## Overblik
+
+Alle komponenter er organiseret i `src/components/`. Hver komponent består af `.jsx` fil + `.module.css` fil for scoped styling.
+
+## 📊 Header & Navigation
+
+### Header.jsx
+**Formål:** Topbar med logo + navigation
+
+**Features:**
+- Logo/brand navn
+- Navigation links (Home, Products, Cart, Contact)
+- Cart icon med antal items
+- Burger menu på mobil
+
+**Props:** Ingen (henter fra Context)
+
+**Styling:** `Header.module.css`
+
+### BurgerMenu.jsx
+**Formål:** Mobil navigation menu
+
+**Features:**
+- Hamburger icon (react-icons)
+- Slide-out menu
+- Click outside to close
+- Mobile only (@media)
+
+## 🛍️ Produkt-komponenter
+
+### ProductList.jsx
+**Formål:** Grid af produkter
+
+**Features:**
+- Map over produkter fra Context
+- Responsive grid (3 kolumner desktop, 2 tablet, 1 mobil)
+- Ogni card viser: billede, navn, pris, rating
+- "Se detaljer" button → ruter til `/products/:id`
+
+### ProductDetail.jsx
+**Formål:** Enkelt produkt dedikeret side
+
+**Features:**
+- Henter produkt-ID fra URL (`useParams()`)
+- Stort billede
+- Fulde detaljer (navn, pris, rating, beskrivelse)
+- "Tilføj til kurv" knap
+- "Tilføj til favoritter" knap
+
+### AboutProduct.jsx
+**Formål:** Yderligere info sektion på produktdetail
+
+**Features:**
+- Shipping info
+- Return policy
+- User reviews
+
+## 🔍 Filter & Søgning
+
+### FilterPanel.jsx
+**Formål:** Kategorier + sortering controls
+
+**Features:**
+- Filter efter kategori (dynamic fra API)
+- Søgefelt (text input)
+- Sortering dropdown:
+  - A-Z
+  - Z-A
+  - Pris stigende
+  - Pris faldende
+  - Rating
+- Reset knap
+
+### Pagination.jsx
+**Formål:** Sidenumre hvis mange produkter
+
+**Features:**
+- Vis nuværende side
+- Navigation til forrige/næste
+- Direkte link til side nummer
+
+## 🛒 Kurv-komponenter
+
+### Cart.jsx
+**Formål:** Mini-kurv preview (evt. sidebar)
+
+**Features:**
+- Vis antal items
+- Vis total pris
+- "Gå til kurv" link
+- Close button hvis modal
+
+### Summary.jsx
+**Formål:** Order summary i kurv
+
+**Features:**
+- Liste af items med antal + pris
+- Subtotal
+- Beregnmeg rabat (hvis kode)
+- Endelig pris
+- "Checkout" knap
+
+## 📝 Formularer
+
+### ContactForm.jsx
+**Formål:** Kontakt/mail formular
+
+**Teknologi:** react-hook-form
+
+**Fields:**
+- Navn (required)
+- Email (required, type email)
+- Besked (textarea, required)
+
+**Features:**
+- Validering on submit
+- Success/error message
+- Reset after submit
+
+### DiscountCode.jsx
+**Formål:** Input for rabatkode
+
+**Features:**
+- Text input for kode
+- "Anvend" knap
+- Validering af kode
+- Vis rabat beløb hvis valid
+
+## 🍪 Øvrige komponenter
+
+### CookieBanner.jsx
+**Formål:** GDPR cookie consent
+
+**Features:**
+- Appears only once (localStorage check)
+- "Accepter" + "Afvis" knapper
+- Gemmer valg i localStorage
+- Animeret ind fra bunden
+
+### BestProposes.jsx
+**Formål:** Destacerede/anbefalede produkter
+
+**Features:**
+- Viser top 3-4 produkter
+- Kan være baseret på rating eller manuelt valg
+
+### FeatureSection.jsx
+**Formål:** Info sektion (f.eks. "Fri fragt over X DKK")
+
+**Features:**
+- Icons (react-icons)
+- Tekst + heading
+
+### Footer.jsx
+**Formål:** Sidefooter
+
+**Features:**
+- Links (About, Privacy, Terms)
+- Copyright
+- Social links (hvis relevant)
+
+---
+
+## 💡 Best Practices
+
+### Props & Children
+```jsx
+// Godt: Props klart defineret
+function ProductCard({ product, onAddToCart }) {
+  return <div>...</div>
+}
+
+// Props er optional med standard-værdier
+function Button({ text = 'Click me', disabled = false }) {
+  return <button>{text}</button>
+}
+```
+
+### Styling (Module CSS)
+```jsx
+// Import som module
+import styles from './ProductList.module.css'
+
+// Brug i className
+<div className={styles.container}>
+  <p className={styles.title}>Produkter</p>
+</div>
+```
+
+### Context API Usage
+```jsx
+import { useContext } from 'react'
+import { ShopContext } from '../Context/Context'
+
+export default function ProductPage() {
+  const { products, cart, addToCart } = useContext(ShopContext)
+  // component logic
+}
+```
+
+---
+
+**Næste:** Læs [Routing](/routing) for at forstå side-navigationen
