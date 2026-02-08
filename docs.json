@@ -29,11 +29,6 @@
           "title": "Komponenter",
           "href": "/components",
           "icon": "layers"
-        },
-        {
-          "title": "Routing",
-          "href": "/routing",
-          "icon": "link"
         }
       ]
     }
